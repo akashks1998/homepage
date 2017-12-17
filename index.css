@@ -93,7 +93,7 @@ canvas {
 #image-blurred-edge {
   background-size: 100% 100%;
   background-image: url('img/aka0.jpg');
-  width: 20vh;
+  width: 25vh;
   height: 20vh;
   box-shadow: 0 0 8px 8px rgb(100, 100, 100) inset;
   border-radius: 10%;
