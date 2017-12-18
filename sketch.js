@@ -2,10 +2,12 @@ let bubbles = [];
 let nav, d, j;
 let opn = 0;
 let cou = 100;
-
+let mic;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   console.log(width);
+	mic= new p5.AudioIn();
+	mic.start();
   if (width < 800) {
     d = createElement('div', '');
     d.id('d');
@@ -45,6 +47,7 @@ function mousePressed() {
 }
 
 function draw() {
+	let vol=mic.getLevel();
   cou++;
   if (cou % 100 == 0) {
     changeImg();
@@ -67,7 +70,7 @@ function draw() {
   beginShape();
   vertex(0, height);
   for (let i = 0; i < width; i += 5) {
-    vertex(i, height - (50 + (height - mouseY) / 5 * Math.pow(2, -(i - mouseX) * (i - mouseX) / 20000)));
+    vertex(i, height - (50 + ( vol*height)/2 * Math.pow(2, -(i - mouseX) * (i - mouseX) / 20000)));
   }
   vertex(width, height);
   endShape(CLOSE);
