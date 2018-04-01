@@ -70,7 +70,7 @@ function draw() {
   beginShape();
   vertex(0, height);
   for (let i = 0; i < width; i += 5) {
-    vertex(i, height - (50 + (( vol*height)/2+100) * Math.pow(2, -(i - mouseX) * (i - mouseX) / 20000)));
+    vertex(i, height - (50 + ( vol*height)/2 * Math.pow(2, -(i - mouseX) * (i - mouseX) / 20000)));
   }
   vertex(width, height);
   endShape(CLOSE);
