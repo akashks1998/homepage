@@ -45,7 +45,7 @@ function mousePressed() {
     let bubble = new Bubble(mouseX, mouseY, random(-10, 10), random(-10, 10), 5);
     bubbles.push(bubble);
   }
-  console.log(isMobileDevice());
+  alert(isMobileDevice());
 }
 
 function draw() {
