@@ -16,7 +16,7 @@ function setup() {
     j.parent('d');
     j.class('fa fa-bars fa-2x');
     d.position(10, 10);
-
+	
 
   }
   for (i = 0; i < 50; i++) {
@@ -37,6 +37,7 @@ function setup() {
     });
   }
   nav = select('#nav');
+	
 }
 
 function mousePressed() {
@@ -44,6 +45,7 @@ function mousePressed() {
     let bubble = new Bubble(mouseX, mouseY, random(-10, 10), random(-10, 10), 5);
     bubbles.push(bubble);
   }
+  console.log(isMobileDevice());
 }
 
 function draw() {
@@ -119,3 +121,8 @@ function changeImg() {
   let im = select('#image-blurred-edge');
   im.style('background-image', "url('img/aka" + (Math.floor(cou / 100)) % 9 + ".jpg')")
 }
+function isMobileDevice() { 
+	return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
+
+
